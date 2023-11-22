@@ -7,12 +7,12 @@ beforeEach(() => {
 })
 
 describe('CopyRight', () => {
-  test('renders Copyright text in component', () => {
+  test('renders Copyright text in the component', () => {
     const copyrightElement = screen.getByText(/Copyright/i);
     expect(copyrightElement).toBeInTheDocument();
   });
   
-  test('renders a Link with correct href', () => {
+  test('renders a Link with correct href link', () => {
     const linkElement = screen.getByRole('link', { name: /Todo List/i });
     expect(linkElement).toBeInTheDocument();
     expect(linkElement).toHaveAttribute('href', 'https://mui.com/');
