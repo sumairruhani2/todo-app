@@ -8,7 +8,7 @@ import ChecklistIcon from '@mui/icons-material/Checklist';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 
-import Copyright from './components/Copyright';
+import Copyright from '../components/Copyright';
 
 export default function MainPage() {
 
@@ -27,7 +27,7 @@ export default function MainPage() {
           <Stack direction="row" spacing={2} alignItems="center" divider={<Divider orientation="vertical" />}
 >
             <ChecklistIcon style={{ fontSize: 100 }} />
-            <Typography style={{ fontSize: 50 }}>
+            <Typography data-testid="main-page-title" style={{ fontSize: 50 }}>
             Todo List
           </Typography>
           </Stack>
