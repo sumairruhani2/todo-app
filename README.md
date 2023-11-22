@@ -44,7 +44,7 @@ Make the script file executable:
 chmod +x setup-hooks.sh
 ```
 
-Run the script file:
+Run the script file to download and set up the git hook:
 ```
 ./setup-hooks.sh
 ```
