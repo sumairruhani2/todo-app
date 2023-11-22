@@ -66,6 +66,16 @@ Run the script file to download and set up the git hook:
 
 ## <ins>Project Workflow</ins>
 
+### _Git Hooks_
+
+Git hooks are scripts that Git automatically executes primarily on a local machine before or after events (like committing, pushing, pulling, etc).
+These hooks tailor the Git workflow to project-specific needs by enforcing coding standards, running tests, and preventing commits that don't meet predefined criteria.
+Default Git hooks are stored in `./.git/hooks`.
+Created hooks are kept in `./git-hooks`
+The hooks created for this project are:
+
+- Branch naming convensions
+
 - project management strategies
 - ceremones
 - retrospectives
