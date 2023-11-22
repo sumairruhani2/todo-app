@@ -29,6 +29,26 @@ performance and accessibility audit
 how the project can be cloned and run
 how to use the application
 
+### Branch naming conventions
+
+Branches should be identified as feature|task|bugfix|hotfix, followed by the JIRA task id and a description, for example:
+
+```
+feature/TODO-999_enforce_branch_naming_conventions
+```
+
+To ensure that branch names adhere to the specified conventions, we have set up a Git hook. Follow the steps below to set up the hook in your local repository.
+
+Make the script file executable:
+```
+chmod +x setup-hooks.sh
+```
+
+Run the script file:
+```
+./setup-hooks.sh
+```
+
 ## Project Workflow
 
 project management strategies
