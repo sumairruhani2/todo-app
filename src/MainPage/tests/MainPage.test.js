@@ -18,7 +18,7 @@ describe('MainPage', () => {
   
   test('renders correct title', () => {
     const titleElement = screen.queryByTestId('main-page-title'); // Add a data-testid
-    expect(titleElement).toBeInTheDocument(); // Assert that the element is in the document
-    expect(titleElement).toHaveStyle({ fontSize: '50px' }); // Assert the font size
+    expect(titleElement).toBeInTheDocument();
+    expect(titleElement).toHaveStyle({ fontSize: '50px' }); 
   });
 })
