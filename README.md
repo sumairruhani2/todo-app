@@ -98,6 +98,15 @@ The hooks created for this project are:
 - snapshots of test sui results
 - PR strategies applied
 
+### _GitHub Actions_
+
+GitHub Actions are workflows defined in code, stored alongside the code in a repository.
+GitHub Actions automate the SDLC, from building and testing to deploying.
+They are triggered by events, and executed in GitHub-hosted runners, allowing easy integration with GitHub repositories.
+The GitHub Actions integrated in this repository are:
+
+- To add
+
 ## <ins>Standards</ins>
 
 - description of a standard (like IEEE730)
