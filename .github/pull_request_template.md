@@ -10,4 +10,4 @@
 
 ## Linked Work item
 
-{TODO-##}(url)
+[TODO-##](url)
