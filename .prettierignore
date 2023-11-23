@@ -1,0 +1,12 @@
+README.md
+
+*.json
+*.sh
+
+.gitignore
+.prettierignore
+
+node_modules
+.git
+.github
+git-hooks
