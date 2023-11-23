@@ -1,35 +1,48 @@
-# Todo-application
+# Todo-Application
 
-Todo application for SQA assignment 2
+- Todo application for SQA assignment 2
 
-## Project Description
+## <ins>Project Description</ins>
 
-desc of project
-features
-snapshots of ui
+- desc of project
+- features
+- snapshots of ui
 
-## Team Description
+## <ins>Team Description</ins>
 
-names of people involved
-roles/responsibilities
-percentage contribution
+- names of people involved
+- roles/responsibilities
+- percentage contribution
 
-## Tools Used
+## <ins>Tools Used</ins>
 
-version control
-testing
-test code coverage
-frameworks and libraries
-linters
-project management tools
-performance and accessibility audit
+- version control
+- testing
+- test code coverage
+- frameworks and libraries
 
-## Instructions to Run the Application
+### _Linters_
 
-how the project can be cloned and run
-how to use the application
+_ESLint_
 
-### Branch naming conventions
+This project utilisies ESLint for analysing JavaScript code for potential errors, styling issues, and adherence to coding standards.
+ESLint rules have been defined by the team in the .eslintrc.js file, in rukles for errors, warnings and styling have been customised.
+ESLint has been integrated in the `package.json` file to run after each commit and after each push.
+To manually run the linter on the code, run the command:
+
+```
+npx eslint .
+```
+
+- project management tools
+- performance and accessibility audit
+
+## <ins>Instructions to Run the Application</ins>
+
+- how the project can be cloned and run
+- how to use the application
+
+### _Branch naming conventions_
 
 Branches should be identified as feature|task|bugfix|hotfix, followed by the JIRA task id and a description, for example:
 
@@ -40,47 +53,68 @@ feature/TODO-999_enforce_branch_naming_conventions
 To ensure that branch names adhere to the specified conventions, we have set up a Git hook. Follow the steps below to set up the hook in your local repository.
 
 Make the script file executable:
+
 ```
 chmod +x setup-hooks.sh
 ```
 
 Run the script file to download and set up the git hook:
+
 ```
 ./setup-hooks.sh
 ```
 
-## Project Workflow
+## <ins>Project Workflow</ins>
 
-project management strategies
-ceremones
-retrospectives
-agile practices
-kanban board
+### _Git Hooks_
 
-## Test Methodologies and Tools
+Git hooks are scripts that Git automatically executes primarily on a local machine before or after events (like committing, pushing, pulling, etc).
+These hooks tailor the Git workflow to project-specific needs by enforcing coding standards, running tests, and preventing commits that don't meet predefined criteria.
+Default Git hooks are stored in `./.git/hooks`.
+Created hooks are kept in `./git-hooks`
+The hooks created for this project are:
 
-test methodologies applies (TDD, BDD)
-types of testing done (UI testing, unit, code coverage, smoke, integration, e2e)
-evidence of test methods and tools (tables of tests, snapshots, code coverage)
+- Branch naming convensions
 
-## Coding Best Practices
+- project management strategies
+- ceremones
+- retrospectives
+- agile practices
+- kanban board
 
-best coding practices applied
+## <ins>Test Methodologies and Tools</ins>
 
-## CI Pipeline
+- test methodologies applies (TDD, BDD)
+- types of testing done (UI testing, unit, code coverage, smoke, integration, e2e)
+- evidence of test methods and tools (tables of tests, snapshots, code coverage)
 
-how the CI pipelines were set up
-snapshots of test sui results
-PR strategies applied
+## <ins>Coding Best Practices</ins>
 
-## Standards
+- best coding practices applied
 
-description of a standard (like IEEE730)
-reason for choosing the standard
-key features of standard applied
+## <ins>CI Pipeline</ins>
 
-## Performance and Accessibility Audit
+- how the CI pipelines were set up
+- snapshots of test sui results
+- PR strategies applied
 
-tools used to check performance and accessibility of application
-snapshots of key results
-analyse results
+### _GitHub Actions_
+
+GitHub Actions are workflows defined in code, stored alongside the code in a repository.
+GitHub Actions automate the SDLC, from building and testing to deploying.
+They are triggered by events, and executed in GitHub-hosted runners, allowing easy integration with GitHub repositories.
+The GitHub Actions integrated in this repository are:
+
+- To add
+
+## <ins>Standards</ins>
+
+- description of a standard (like IEEE730)
+- reason for choosing the standard
+- key features of standard applied
+
+## <ins>Performance and Accessibility Audit</ins>
+
+- tools used to check performance and accessibility of application
+- snapshots of key results
+- analyse results

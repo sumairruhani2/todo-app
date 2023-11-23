@@ -1,3 +1,7 @@
+// React
+import React from "react";
+
+// Styles
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
