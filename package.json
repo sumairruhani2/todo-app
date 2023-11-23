@@ -25,20 +25,12 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . && eslint --fix .",
-    "format": "prettier . --write"
-
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run lint --max-warnings=0"
-    }
+    "format": "prettier . --write",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
+    "*.js": "eslint --cache --fix",
+    "*.--write": "prettier --write"
   },
   "eslintConfig": {
     "extends": [
