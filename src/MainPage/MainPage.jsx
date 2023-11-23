@@ -1,56 +1,53 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import ChecklistIcon from '@mui/icons-material/Checklist';
-import Stack from '@mui/material/Stack';
-import Divider from '@mui/material/Divider';
+// React
+import { useState } from 'react';
 
+// Styles
+import {Box, Container} from '@mui/material';
+
+// NPM packages
+import { v4 as uuidv4 }  from 'uuid'
+
+// Components
 import Copyright from '../components/Copyright';
+import TodoForm from '../components/TodoForm'
+import TodoList from '../components/TodoList';
+import Title from '../components/Title';
+
 
 export default function MainPage() {
+  const [todos, setTodos] = useState([]);
+
+  const checkTodo = (id) => {
+    setTodos(todos.map(todo => {
+      if(todo.id === id) {
+        return {
+          ...todo,
+          isCompleted: !todo.isCompleted
+        };
+      }
+      return todo;
+    }));
+  };
+
+  const deleteTodo = (id) =>  {
+    setTodos(todos.filter(todo => todo.id != id))
+  }
+  
+  const addTodo = (text) => {
+    const newTodo = {
+      id: uuidv4(),
+      title: text,
+      isCompleted: false
+    }
+    setTodos([...todos, newTodo])
+  }
 
   return (
     <Box sx={{  minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Container component="main" maxWidth="xs">
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            borderRadius: '10px'
-          }}
-        >
-          <Stack direction="row" spacing={2} alignItems="center" divider={<Divider orientation="vertical" />}
->
-            <ChecklistIcon style={{ fontSize: 100 }} />
-            <Typography data-testid="main-page-title" style={{ fontSize: 50 }}>
-            Todo List
-          </Typography>
-          </Stack>
-          <Box component="form" noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="todo"
-              label="New Todo"
-              name="todo"
-              autoFocus
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Add Todo
-            </Button>
-          </Box>
-        </Box>
+        <Title />
+        <TodoForm addTodo={addTodo}/>
+        <TodoList todos={todos} checkTodo={checkTodo} deleteTodo={deleteTodo}/>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
       </Box>
