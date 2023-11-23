@@ -7,7 +7,8 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "prettier"
     ],
     "overrides": [
         {
@@ -26,7 +27,6 @@
     },
     "plugins": [
         "react", 
-        "@stylistic/js",
         "jest"
     ],
     "rules": {
@@ -34,9 +34,6 @@
         "jest/no-disabled-tests": "warn",
         "jest/no-focused-tests": "error",
         "jest/no-identical-title": "error",
-        "@stylistic/js/indent": ["warn", 2],
-        "@stylistic/js/semi": "warn",
-        "@stylistic/js/comma-dangle": ["warn", "always-multiline"],
         "no-unused-vars": "warn",
         "no-console": "warn",
         "no-alert": "warn"
