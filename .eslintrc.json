@@ -39,6 +39,6 @@
         "@stylistic/js/comma-dangle": ["warn", "always-multiline"],
         "no-unused-vars": "warn",
         "no-console": "warn",
-        "no-alert": "warn",
+        "no-alert": "warn"
     }
 }
