@@ -1,5 +1,5 @@
 // React
-import React from 'react';
+import React, { useState } from 'react';
 
 // Styles
 import {
@@ -14,13 +14,35 @@ import {
 // Icons
 import DeleteIcon from '@mui/icons-material/Delete';
 import DoneIcon from '@mui/icons-material/Done';
+import EditIcon from '@mui/icons-material/Edit';
 
-const Todo = ({ title, isCompleted, checkTodo, id, deleteTodo }) => {
+// Components
+import EditModal from './EditModal';
+
+const Todo = ({
+  title,
+  isCompleted,
+  checkTodo,
+  id,
+  deleteTodo,
+  addTodo,
+  editTodo,
+}) => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   const completeCheck = () => {
     checkTodo(id);
   };
 
   const removeTodo = () => deleteTodo(id);
+
+  const handleEdit = (editedTitle) => {
+    editTodo(id, editedTitle);
+    closeModal();
+  };
 
   return (
     <Container>
@@ -41,12 +63,22 @@ const Todo = ({ title, isCompleted, checkTodo, id, deleteTodo }) => {
             <IconButton onClick={completeCheck}>
               <DoneIcon />
             </IconButton>
+            <IconButton onClick={openModal}>
+              <EditIcon />
+            </IconButton>
             <IconButton onClick={removeTodo}>
               <DeleteIcon />
             </IconButton>
           </Stack>
         </CardContent>
       </Card>
+      <EditModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title={title}
+        addTodo={addTodo}
+        onEdit={handleEdit}
+      />
     </Container>
   );
 };

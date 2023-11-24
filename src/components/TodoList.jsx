@@ -7,7 +7,7 @@ import { Box } from '@mui/material';
 // Components
 import Todo from './Todo';
 
-const TodoList = ({ todos, checkTodo, deleteTodo }) => {
+const TodoList = ({ todos, checkTodo, deleteTodo, addTodo, editTodo }) => {
   return (
     <Box>
       {todos.map((todo) => (
@@ -18,6 +18,8 @@ const TodoList = ({ todos, checkTodo, deleteTodo }) => {
           checkTodo={checkTodo}
           id={todo.id}
           deleteTodo={deleteTodo}
+          addTodo={addTodo}
+          editTodo={editTodo}
         />
       ))}
     </Box>
