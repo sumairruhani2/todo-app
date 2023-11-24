@@ -15,7 +15,7 @@ export default function Title() {
       alignItems="center"
       divider={<Divider orientation="vertical" />}
     >
-      <ChecklistIcon style={{ fontSize: 100 }} />
+      <ChecklistIcon data-testid="checklist-icon" style={{ fontSize: 100 }} />
       <Typography data-testid="main-page-title" style={{ fontSize: 50 }}>
         Todo List
       </Typography>
