@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 
 // Styles
-import { Button, Box, TextField } from '@mui/material';
+import { Button, Box, TextField, Stack } from '@mui/material';
 
-export default function TodoForm({ addTodo }) {
+export default function TodoForm({ addTodo, deleteAllTodos }) {
   const [text, setText] = useState('');
   const [error, setError] = useState('');
 
@@ -39,24 +39,46 @@ export default function TodoForm({ addTodo }) {
         error={Boolean(error)}
         helperText={error}
       />
-      <Button
-        type="submit"
-        fullWidth
-        variant="contained"
-        sx={{
-          mt: 3,
-          mb: 2,
-          bgcolor: '#e84118',
-          '&:hover': {
-            bgcolor: '#c23616',
-          },
-          '&:active': {
-            bgcolor: '#c23616',
-          },
-        }}
-      >
-        Add Todo
-      </Button>
+      <Stack spacing={2} direction="row">
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          sx={{
+            mt: 3,
+            mb: 2,
+            bgcolor: '#e84118',
+            width: '65%',
+            '&:hover': {
+              bgcolor: '#c23616',
+            },
+            '&:active': {
+              bgcolor: '#c23616',
+            },
+          }}
+        >
+          Add New Todo
+        </Button>
+        <Button
+          onClick={deleteAllTodos}
+          fullWidth
+          variant="contained"
+          sx={{
+            mt: 3,
+            mb: 2,
+            width: '35%',
+            bgcolor: '#e84118',
+            '&:hover': {
+              bgcolor: '#c23616',
+            },
+            '&:active': {
+              bgcolor: '#c23616',
+            },
+          }}
+        >
+          Delete All Todos
+        </Button>
+      </Stack>
     </Box>
   );
 }

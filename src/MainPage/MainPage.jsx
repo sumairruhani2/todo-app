@@ -14,7 +14,8 @@ import Title from '../components/Title';
 import useMainPage from './hooks/useMainPage';
 
 const MainPage = () => {
-  const { todos, checkTodo, deleteTodo, addTodo, editTodo } = useMainPage();
+  const { todos, checkTodo, deleteTodo, addTodo, editTodo, deleteAllTodos } =
+    useMainPage();
 
   return (
     <Box
@@ -36,7 +37,7 @@ const MainPage = () => {
         >
           <Title />
         </Box>
-        <TodoForm addTodo={addTodo} />
+        <TodoForm addTodo={addTodo} deleteAllTodos={deleteAllTodos} />
         <TodoList
           todos={todos}
           checkTodo={checkTodo}

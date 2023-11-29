@@ -18,6 +18,11 @@ const useMainPage = () => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
+  // Deletes all todo items in the list
+  const deleteAllTodos = () => {
+    setTodos([]);
+  };
+
   // Adds a new todo item from the list
   const addTodo = (text) => {
     if (text.length > 0) {
@@ -47,6 +52,7 @@ const useMainPage = () => {
     deleteTodo,
     addTodo,
     editTodo,
+    deleteAllTodos,
   };
 };
 
