@@ -32,11 +32,13 @@ const useMainPage = () => {
 
   // Edits a todo item title in the list
   const editTodo = (id, editedTitle) => {
-    setTodos((prevTodos) =>
-      prevTodos.map((todo) =>
-        todo.id === id ? { ...todo, title: editedTitle } : todo
-      )
-    );
+    if (editedTitle.length > 0) {
+      setTodos((prevTodos) =>
+        prevTodos.map((todo) =>
+          todo.id === id ? { ...todo, title: editedTitle } : todo
+        )
+      );
+    }
   };
 
   return {

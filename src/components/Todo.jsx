@@ -49,28 +49,52 @@ const Todo = ({
       <Card
         className="root"
         variant="outlined"
-        style={{ marginTop: 35, background: 'lightgray' }}
+        style={{
+          marginTop: 35,
+          background: '#dcdde1',
+          display: 'flex',
+          alignItems: 'center',
+        }}
       >
-        <CardContent>
+        <CardContent style={{ flex: '1' }}>
           <Typography
             variant="h5"
             component="h2"
-            style={{ textDecoration: isCompleted ? 'line-through' : 'none' }}
+            style={{
+              color: '#353b48',
+              fontWeight: 'bold',
+              textDecoration: isCompleted ? 'line-through' : 'none',
+            }}
           >
             {title}
           </Typography>
-          <Stack direction="row" style={{ float: 'right' }}>
-            <IconButton onClick={completeCheck}>
-              <DoneIcon />
-            </IconButton>
-            <IconButton onClick={openModal}>
-              <EditIcon />
-            </IconButton>
-            <IconButton onClick={removeTodo}>
-              <DeleteIcon />
-            </IconButton>
-          </Stack>
         </CardContent>
+        <Stack direction="row" style={{ marginRight: '8px' }}>
+          <IconButton
+            onClick={completeCheck}
+            style={{
+              color: '#353b48',
+            }}
+          >
+            <DoneIcon />
+          </IconButton>
+          <IconButton
+            onClick={openModal}
+            style={{
+              color: '#353b48',
+            }}
+          >
+            <EditIcon />
+          </IconButton>
+          <IconButton
+            onClick={removeTodo}
+            style={{
+              color: '#353b48',
+            }}
+          >
+            <DeleteIcon />
+          </IconButton>
+        </Stack>
       </Card>
       <EditModal
         isOpen={isModalOpen}

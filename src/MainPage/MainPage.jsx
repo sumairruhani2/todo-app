@@ -17,9 +17,25 @@ const MainPage = () => {
   const { todos, checkTodo, deleteTodo, addTodo, editTodo } = useMainPage();
 
   return (
-    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Container component="main" maxWidth="xs">
-        <Title />
+    <Box
+      sx={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        background: '#f5f6fa',
+      }}
+    >
+      <Container component="main" maxWidth="sm">
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+          }}
+        >
+          <Title />
+        </Box>
         <TodoForm addTodo={addTodo} />
         <TodoList
           todos={todos}

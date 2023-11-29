@@ -29,6 +29,7 @@ const style = {
 
 export default function EditModal({ isOpen, onClose, title, onEdit, addTodo }) {
   const [editedTitle, setEditedTitle] = useState('');
+  const [error, setError] = useState('');
 
   useEffect(() => {
     setEditedTitle(title);
@@ -36,9 +37,20 @@ export default function EditModal({ isOpen, onClose, title, onEdit, addTodo }) {
 
   const handleTextFieldChange = (event) => {
     setEditedTitle(event.target.value);
+    setError('');
   };
 
   const handleEdit = () => {
+    if (editedTitle.trim() === '') {
+      setError('Todo item name cannot be empty');
+      return;
+    }
+
+    if (editedTitle === title) {
+      setError('Todo item name must be different');
+      return;
+    }
+
     onEdit(editedTitle);
     onClose();
   };
@@ -73,6 +85,8 @@ export default function EditModal({ isOpen, onClose, title, onEdit, addTodo }) {
             autoFocus
             value={editedTitle}
             onChange={handleTextFieldChange}
+            error={Boolean(error)}
+            helperText={error}
           />
           <Button
             type="submit"

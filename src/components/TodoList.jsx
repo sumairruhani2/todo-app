@@ -9,7 +9,7 @@ import Todo from './Todo';
 
 const TodoList = ({ todos, checkTodo, deleteTodo, addTodo, editTodo }) => {
   return (
-    <Box>
+    <Box background="#dcdde1">
       {todos.map((todo) => (
         <Todo
           key={todo.id}
