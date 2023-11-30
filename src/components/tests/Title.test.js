@@ -16,16 +16,12 @@ describe('Title Component', () => {
 
     const mainTitle = screen.getByTestId('main-page-title');
     expect(mainTitle).toBeInTheDocument();
+    expect(getByTestId('main-page-title')).toHaveTextContent('Todo List');
   });
 
   // Snapshot Test
   test('matches snapshot', () => {
     expect(asFragment()).toMatchSnapshot(); //delete __snapshots__ folder to update it if tests fail
-  });
-
-  // Content Test
-  test('renders the correct content: title', () => {
-    expect(getByTestId('main-page-title')).toHaveTextContent('Todo List');
   });
 
   // Style Test

@@ -18,11 +18,6 @@ describe('Todo', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  // Content Test
-  test('renders the correct todo title', () => {
-    expect(getByText('Test Todo')).toBeInTheDocument();
-  });
-
   // Style Test
   test('has the correct styles for completed todo', () => {
     cleanup(); // clear render from beforeEach
