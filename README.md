@@ -9,17 +9,40 @@
 - snapshots of ui
 
 ## <ins>Team Description</ins>
+Our team consisted of only two members. Due to this, each member undertook multiple roles in the team.
 
-- names of people involved
-- roles/responsibilities
-- percentage contribution
+**Abdul-Subhan Latif** - Abdul-Subhan was the lead QA tester on the team. His role in the project entailed writing tests for the application and ensuring SQA practices were implemented throughout the project lifecycle. Alongside this Abdul was heavily involved in the planning stage, designing the initial figma for the Front-End and outlining the functional and non-functional requirements for the project.
+
+Abdul-Subhan Key Roles:
+- Writing Tests
+- Implementing linting checks
+- Implementing code formatter
+- SQA practices
+- Reviewing Pull Requests
+- Smoke testing Pull Requests
+- Lead designer
+  
+**Sumair Ruhani** - Sumair was the lead developer on the team. He designed and implemented the core functionality for the To-Do app, alongisde styling it based on the figma designs. Alongside this, Sumair was responsible for ensuring CI/CD practices were implemented in the project, by writing GitHub actions and Git Hooks. 
+
+Sumair Key Roles:
+- Writing the program
+- Implementing branch naming conventions
+- Implementing Automated testing
+- CI/CD practices
+- Reviewing Pull Requests
+- Smoke testing Pull Requests
+- Project Manager
+  
+Both members of the team evenly split the workload between themselves, with one primarily focused on developing the app and implementing CI/CD practices, while the other was focused on writing tests and ensuring SQA practices where met. Therefore, the contribution from each member was 50% each.
+
+**It's worth noting that the line contributions cannot be used as an accurate reference for the amount of contributions from each member, due to an error where the `node_modules` (installed prewritten packages) where accidently committed alongside the rest of the code, causing the lines committed for one member of the team to be significantly more than it should be. Therefore, it would be better to go through the merged pull requests, to view contributions from each member. This can be done using the search filter on the pull requests tab of the repository and setting the filter to: `is:pr is:merged`**
 
 ## <ins>Tools Used</ins>
 
-- version control
-- testing
+- version control - GitHub
+- testing - Jest / React Testing Library
 - test code coverage
-- frameworks and libraries
+- frameworks and libraries - React / MUI
 
 ### _Linters_
 
@@ -34,7 +57,7 @@ To manually run the linter on the code, run the command:
 npx eslint .
 ```
 
-- project management tools
+- project management tools (JIRA)
 - performance and accessibility audit
 
 ## <ins>Instructions to Run the Application</ins>
@@ -102,10 +125,14 @@ The hooks created for this project are:
 
 GitHub Actions are workflows defined in code, stored alongside the code in a repository.
 GitHub Actions automate the SDLC, from building and testing to deploying.
-They are triggered by events, and executed in GitHub-hosted runners, allowing easy integration with GitHub repositories.
+They are triggered by events, and executed in GitHub-hosted runners, allowing easy integration with GitHub repositories. Likewise, they sit directly in the GitHub Pipeline, dictating what can be merged into the codebase, based on their outcomes.
 The GitHub Actions integrated in this repository are:
 
-- To add
+- **Automatic Reviewer assign** - Whenever a pull request is created, an appropriate reviewer is assigned. Since our project had two members, whenever one member created a pull request, the action automatically assigned the other member as a required reviewer. The reviewer recieves an email notification that they need to review the pull request. This removes the need for the developer to manually add reviewers. Likewise, this prevents the situation where users forget to assign reviewers to their pull request, resulting in it sitting and becoming stale, which is bad practice.
+
+- **Automatic author assign** - Whenever a pull request is created, the creator of it is automatically assigned as the author. This removes the mundane step for developers to manually assign themselves as an author (which is often forgotten about) and ensures the reviewer knows who was responsible for the pull request
+
+- **Automated testing** - An Action has been written to run all tests within the codebase in the pipeline automatically. This includes all unit tests and integration tests. The action is triggered whenever a pull request is created, or updated. It runs using NodeJS in the GitHub pipeline and will log all of the tests that have successfully passed or failed during the testing process. If any tests fail, they are logged, and merging will be blocked until it is fixed. This ensures that only high quality code that passes the tests are merged.
 
 ## <ins>Standards</ins>
 
