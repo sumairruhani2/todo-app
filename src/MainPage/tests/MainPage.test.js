@@ -8,8 +8,15 @@ beforeEach(() => {
 
 describe('MainPage', () => {
   test('renders Add Todo button', () => {
-    const addButton = screen.getByText(/Add Todo/i);
+    const addButton = screen.getByRole('button', { name: /Add New Todo/i });
     expect(addButton).toBeInTheDocument();
+  });
+
+  test('renders Delete Todo button', () => {
+    const deleteButton = screen.getByRole('button', {
+      name: /Delete All Todos/i,
+    });
+    expect(deleteButton).toBeInTheDocument();
   });
 
   test('renders New Todo input field', () => {
