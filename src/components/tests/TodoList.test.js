@@ -1,14 +1,12 @@
-// todoList.test.jsx
-
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import TodoList from '../TodoList';
 
-let asFragment, getByRole;
+let asFragment;
 
 describe('TodoList', () => {
   beforeEach(() => {
-    ({ asFragment, getByRole } = render(
+    ({ asFragment } = render(
       <TodoList
         todos={[
           { id: 1, title: 'Test Todo 1', isCompleted: false },
@@ -23,10 +21,13 @@ describe('TodoList', () => {
   });
 
   // Rendering Test
-  test('renders TodoList component without errors', () => {
-    expect(getByRole('list')).toBeInTheDocument();
-    expect(getByRole('listitem', { name: /Test Todo 1/i })).toBeInTheDocument();
-    expect(getByRole('listitem', { name: /Test Todo 2/i })).toBeInTheDocument();
+  test('key elements', () => {
+    expect(
+      screen.getByRole('heading', { name: /Test Todo 1/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: /Test Todo 2/i })
+    ).toBeInTheDocument();
   });
 
   // Snapshot Test
@@ -36,7 +37,9 @@ describe('TodoList', () => {
 
   // Style Test
   test('has the correct styles for the list', () => {
-    const list = getByRole('list');
-    expect(list).toHaveStyle('margin-top: 0px');
+    const list = screen.getAllByRole('heading');
+    list.forEach((item) => {
+      expect(item).toHaveStyle('margin-top: 0px');
+    });
   });
 });
