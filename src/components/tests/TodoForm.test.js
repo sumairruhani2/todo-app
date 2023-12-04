@@ -14,7 +14,10 @@ describe('TodoForm', () => {
     expect(screen.getByLabelText('New Todo *')).toBeInTheDocument();
     expect(screen.getByTestId('todo')).toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: /add todo/i })
+      screen.getByRole('button', { name: /Add New Todo/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Delete All Todos/i })
     ).toBeInTheDocument();
   });
 
