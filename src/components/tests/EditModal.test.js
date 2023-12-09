@@ -22,7 +22,11 @@ describe('EditModal', () => {
     expect(document.getElementById('edit')).toHaveValue('Test Todo');
     expect(screen.getByRole('button', { name: /close/i })).toBeInTheDocument();
     expect(screen.getByText('Edit Todo *')).toBeInTheDocument();
-    expect(screen.getByText('Edit Todo Item')).toBeInTheDocument();
+    const editTodoButton = screen.getByRole('button', {
+      name: /Edit Todo/i,
+    });
+
+    expect(editTodoButton).toBeInTheDocument();
   });
 
   // Snapshot Test
@@ -30,9 +34,18 @@ describe('EditModal', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  // Style Test
-  test('closes the modal when the close button is clicked', () => {
+  // Logic test
+  test('Close modal logic run when close button is clicked', () => {
+    const onCloseMock = jest.fn();
+    render(
+      <EditModal
+        isOpen={true}
+        onClose={onCloseMock}
+        title="Test Todo"
+        onEdit={() => {}}
+      />
+    );
     fireEvent.click(screen.getByRole('button', { name: /close/i }));
-    // expect(onCloseMock).toHaveBeenCalledTimes(1);
+    expect(onCloseMock).toHaveBeenCalledTimes(1);
   });
 });

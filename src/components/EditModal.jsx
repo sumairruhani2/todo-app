@@ -27,7 +27,7 @@ const style = {
   p: 4,
 };
 
-export default function EditModal({ isOpen, onClose, title, onEdit, addTodo }) {
+export default function EditModal({ isOpen, onClose, title, onEdit }) {
   const [editedTitle, setEditedTitle] = useState('');
   const [error, setError] = useState('');
 
@@ -93,6 +93,7 @@ export default function EditModal({ isOpen, onClose, title, onEdit, addTodo }) {
             type="submit"
             fullWidth
             variant="contained"
+            data-testid="edit-todo-button"
             sx={{ mt: 3, mb: 2 }}
             onClick={handleEdit}
           >

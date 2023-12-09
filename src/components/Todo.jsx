@@ -71,6 +71,7 @@ const Todo = ({
         </CardContent>
         <Stack direction="row" style={{ marginRight: '8px' }}>
           <IconButton
+            data-testid="done-icon-button"
             onClick={completeCheck}
             style={{
               color: '#353b48',
@@ -79,6 +80,7 @@ const Todo = ({
             <DoneIcon />
           </IconButton>
           <IconButton
+            data-testid="edit-icon-button"
             onClick={openModal}
             style={{
               color: '#353b48',
@@ -87,6 +89,7 @@ const Todo = ({
             <EditIcon />
           </IconButton>
           <IconButton
+            data-testid="delete-icon-button"
             onClick={removeTodo}
             style={{
               color: '#353b48',
