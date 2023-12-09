@@ -82,6 +82,7 @@ export default function EditModal({ isOpen, onClose, title, onEdit, addTodo }) {
             fullWidth
             id="edit"
             label="Edit Todo"
+            inputProps={{ 'data-testid': 'edit-todo' }}
             autoFocus
             value={editedTitle}
             onChange={handleTextFieldChange}
