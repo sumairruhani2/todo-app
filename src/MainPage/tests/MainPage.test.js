@@ -1,11 +1,11 @@
 import React from 'react';
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import MainPage from '../MainPage';
 
-let asFragment, debug;
+let asFragment;
 
 beforeEach(() => {
-  ({ asFragment, debug } = render(<MainPage />));
+  ({ asFragment } = render(<MainPage />));
 });
 
 describe('MainPage', () => {
