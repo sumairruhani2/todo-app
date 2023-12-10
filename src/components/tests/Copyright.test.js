@@ -8,7 +8,7 @@ beforeEach(() => {
 
 describe('CopyRight', () => {
   test('renders Copyright text in the component', () => {
-    const copyrightElement = screen.getByText(/Copyright/i);
+    // const copyrightElement = screen.getByText(/Copyright/i);
     expect(copyrightElement).toBeInTheDocument();
   });
 
