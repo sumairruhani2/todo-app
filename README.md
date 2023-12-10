@@ -4,22 +4,28 @@
 
 ## <ins>Project Description</ins> SUMAIR
 
-- desc of project
-Todo list application
-Purposes: daily chores, shopping list
+This project is a simple To-Do list application, created to enable users to track what tasks they have completed, and what they still have left to do. The program has been designed to be used for a plethora of different purposes, some of which may include tracking your chores, shopping, or daily tasks.
 
-- features
-Add items
-Delete items
-Edit items
-Delete all items
+### **Here are the features included in the application:**
+- Add new todo items
+- Delete todo items
+- Edit a todo item
+- Delete all todo items
 
-- snapshots of ui
-Figma design
-Page before todos
-Page w todos added
-Checked todo
-Editing Modal
+The application features a simple and easy to use UI, with a singular page, that can dynamically scale as todo items are added.
+
+### Empty todo list:
+![Empty todo list](./public/snapshots/todo-empty.png)
+
+### Todo list with items:
+![Todo list with items](./public/snapshots/todo-added.png)
+
+### Checked todo item:
+![Checked todo item](./public/snapshots/todo-checked.png)
+
+### Edit todo item modal:
+![Edit todo item modal](./public/snapshots/todo-edit.png)
+
 
 ## <ins>Team Description</ins> SUMAIR
 Our team consisted of only two members. Due to this, each member undertook multiple roles in the team. Despite having individual roles, we wore multiple hats and discussed features collaboratively in our daily standups. 
